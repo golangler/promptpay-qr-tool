@@ -146,14 +146,6 @@ To run this project, you need a web browser with JavaScript enabled.
 
 ```
 
-Contributing
-Fork the repository.
-Create your feature branch (git checkout -b feature/AmazingFeature).
-Commit your changes (git commit -m 'Add some AmazingFeature').
-Push to the branch (git push origin feature/AmazingFeature).
-Open a Pull Request.
-
-
 License
 ถ้าแก้ก็แบ่งมา share กันด้วย จะได้ช่วยกัน update นะ
 
