@@ -11,6 +11,8 @@ This project is a web-based application to generate PromptPay QR codes for diffe
 - Additional fields for Biller ID including Merchant Name, Reference 1, and Reference 2
 - Displays generated QR code and payload for easy copy-pasting
 
+![Demo](https://github.com/golangler/promptpay-qr-tool/blob/main/video-to-gif-converter.gif)
+
 ## Getting Started
 
 ### Prerequisites
