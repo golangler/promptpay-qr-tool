@@ -4,7 +4,7 @@ This project is a web-based application to generate PromptPay QR codes for diffe
 
 โปรเจคนี้เป็นแอพพลิเคชั่นบนเว็บที่ใช้สร้าง QR Code ของ PromptPay สำหรับ PromptPay ID หลายประเภท แอพพลิเคชั่นนี้รองรับการสร้าง QR Code สำหรับหมายเลขโทรศัพท์, เลขบัตรประชาชน, เลขที่ผู้เสียภาษี, เลขที่กระเป๋าเงิน และเลขที่ผู้เรียกเก็บเงิน
 
- Keep it clean code and make it simple[จะไม่เน้นสวยเน้นใช้งานง่ายเน้นเอาไปต่อยอดง่าย/ถ้า update รูปแบบเพิ่มได้ ช่วยส่งมาเพิ่มให้ผมด้วยนะครับ]
+ Keep it clean code and make it simple[จะไม่เน้นสวยเน้นใช้งานง่ายเน้นเอาไปต่อยอดง่าย/ถ้า update รูปแบบเพิ่มได้ ช่วยส่งมาเพิ่มให้ผมด้วยนะครับ/if you can update more type like more Tag or other improvement please update to me too ^_^]
 
 สำหรับ qrcode ตาม document ธรรมดาเลยไม่มีท่ายาก แต่ Biller ID ยากครับกว่าจะแกะได้ [for promptpay normal just follow document but for biller id it more harder take sometime then can solve it]
 
