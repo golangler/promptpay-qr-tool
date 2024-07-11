@@ -37,9 +37,9 @@ To run this project, you need a web browser with JavaScript enabled.
     cd promptpay-qr-tool
     ```
 
-3. Open `qr_without_code.html` `qr_generator_html.html` `qr_generator_code.html` in your web browser:
+3. Open `qr_without_code.html` OR `qr_generator_html.html` OR `qr_generator_code.html` in your web browser:
     ```sh
-    open qr_without_code.html.html,or qr_separate_files/qr_generator_html.html or qr_single_file/qr_generator_code.html
+    open qr_without_code.html.html, qr_separate_files/qr_generator_html.html qr_single_file/qr_generator_code.html
     ```
 
 ## Usage
