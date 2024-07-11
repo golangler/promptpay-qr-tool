@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptPay QR Code Generator</title>
+  <script src="qrcode.min.js"></script>
+  <script src="qrcode_generator.js"></script>
+  <style>
+    .extra-fields {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>PromptPay QR Code Generator</h1>
+  <form id="promptpay-form">
+    <label for="pp-type">PromptPay Type:</label>
+    <select id="pp-type" name="pp-type">
+      <option value="01">Phone Number</option>
+      <option value="02">National ID</option>
+      <option value="03">Reg No. or Tax ID</option>
+      <option value="04">Wallet ID</option>
+      <option value="05">Biller ID</option>
+      <!-- <option value="30">Tag 30</option> -->
+    </select>
+    <br>
+    <label for="pp-value">PromptPay ID:</label>
+    <input type="text" id="pp-value" name="pp-value" required>
+    <br>
+    <div class="extra-fields" id="extra-fields">
+      <label for="pp-merchant-name">Merchant Name:</label>
+      <input type="text" id="pp-merchant-name" name="pp-merchant-name">
+      <br>
+      <label for="pp-ref1">Reference 1:</label>
+      <input type="text" id="pp-ref1" name="pp-ref1">
+      <br>
+      <label for="pp-ref2">Reference 2:</label>
+      <input type="text" id="pp-ref2" name="pp-ref2">
+      <br>
+    </div>
+    <label for="pp-amount">Amount (optional):</label>
+    <input type="number" id="pp-amount" name="pp-amount" step="0.01">
+    <br>
+    <button type="submit">Generate QR Code</button>
+  </form>
+  <div id="qrcode"></div>
+  <div id="payload"></div>
+
+  <script>
+    document.getElementById('pp-type').addEventListener('change', function() {
+      var extraFields = document.getElementById('extra-fields');
+      if (this.value === '05') {
+          extraFields.style.display = 'block';
+      } else {
+          extraFields.style.display = 'none';
+      }
+    });
+
+    document.getElementById('promptpay-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const ppType = document.getElementById('pp-type').value;
+      const ppValue = document.getElementById('pp-value').value;
+      const ppAmount = document.getElementById('pp-amount').value ? parseFloat(document.getElementById('pp-amount').value) : null;
+      const ppRef1 = document.getElementById('pp-ref1').value;
+      const ppRef2 = document.getElementById('pp-ref2').value;
+      const ppMerchantName = document.getElementById('pp-merchant-name').value;
+
+      let payload;
+
+      if (ppType === '05') {
+        payload = generateBillPaymentQRCode(ppValue, ppMerchantName, ppRef1, ppRef2, ppAmount);
+      } else {
+        payload = generatePayload(ppType, ppValue, ppAmount, ppRef1, ppRef2);
+      }
+
+      var qrcodeContainer = document.getElementById('qrcode');
+      qrcodeContainer.innerHTML = '';
+      new QRCode(qrcodeContainer, {
+        text: payload,
+        width: 256,  // Increase the width
+        height: 256  // Increase the height
+      });
+
+      document.getElementById("payload").innerText = payload;
+    });
+  </script>
+</body>
+</html>
